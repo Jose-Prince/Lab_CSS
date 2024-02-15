@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4fc5745f-92e2-440a-81b7-24ffa8336162/d9uisrx-17d82d55-e056-4f3e-91eb-580ec4bc0a09.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRmYzU3NDVmLTkyZTItNDQwYS04MWI3LTI0ZmZhODMzNjE2MlwvZDl1aXNyeC0xN2Q4MmQ1NS1lMDU2LTRmM2UtOTFlYi01ODBlYzRiYzBhMDkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RD6f-vcZ7eiiD7Ca8S2FKi2I-oizs84i9p-XxFXxmdA");
+            background-size: cover;
+            position: relative;
+            animation: desplazar 144s linear infinite;
+            animation-delay: 0.8s;
+        }
+
+        /*Animación del background*/
+        @keyframes desplazar {
+            from {
+                background-position: 0 0; /* Comienza desde la posición inicial */
+            }
+            to {
+                background-position: 500000% 0; /* Termina desplazándose completamente hacia la derecha */
+            }
+        }
+
+    /*Personaje principal*/
+    .character-container {
+        position: fixed;
+        top: 54%;
+        animation: moverse 0.8s linear forwards; /*Propiedad "infinite" realizar la animación indefinidamente*/
+    }
+
+    /*Animación para el movimiento lateral de sonic*/
+    @keyframes moverse {
+        from {
+            transform: translateX(0px) translateY(0px); 
+        }
+        to {
+            transform: translateX(750px) translateY(0px); 
+        }
+    }
+
+        /*Aplicación de color azul*/
+        .body, .head, .leg1, .leg2, .knee1, .knee2 , .leg3, .leg4{
+            position: fixed;
+            background-color: #462997;
+        }
+
+        /*Aplicación de color piel*/
+        .body::after, .mouth, .ear {
+            position: fixed;
+            background-color: #fcdc94;
+        }
+
+        /*Aplicación de color negro*/
+        .nose, .irisR, .irisL {
+            position: fixed;
+            background-color: black;
+        }
+
+        /*Aplicación de color blanco*/
+        .decoration1, .decoration2 ,.sock, .eyeL, .eyeR {
+            position: fixed;
+            background-color: white;
+        }
+
+        /*Aplicación de color rojo*/
+        .shoe_base, .moving-sign {
+            position: fixed;
+            border-bottom: 50px solid #f00; 
+            background-color: red;
+        }
+
+        /*Cuerpo*/
+        .body, .head {
+            border-radius: 50%;
+            height: 100px;
+        }
+
+                        .head {
+                            width: 100px;
+                            top: -60px; 
+                            left: 25px; 
+                        }
+
+                        .body {
+                            width: 80px;
+                            transform: rotate(15deg);
+                            transform-origin: center; 
+                        }
+
+        
+        /*Panza de Sonic*/
+        .body::after{
+            content: "";
+            display: block;
+            height: 70px;
+            width: 50px;
+            border-radius: 50%;
+            top: 30px; 
+            left: 24px; 
+            transform: rotate(20deg);
+            transform-origin: center;
+        }
+
+        /*--------------------------Cabello-----------------------*/
+
+        .hair1 img {
+            position: fixed;
+            width: 150px;
+            height: 100px;
+            top: -85px;
+            left: -5px;
+            transform: rotate(37deg);
+            animation: movimientoH1 0.5s linear infinite;
+        }
+
+        .hair2 img {
+            position: fixed;
+            width: 150px;
+            height: 100px;
+            top: -60px;
+            left: -40px;
+            transform: rotate(29deg);
+            animation: movimientoH2 0.5s linear infinite;
+        }
+
+        .hair3 img {
+            position: fixed;
+            width: 150px;
+            height: 100px;
+            top: -40px;
+            left: -36px;
+            transform: rotate(15deg);
+            animation: movimientoH3 0.5s linear infinite;
+        }
+
+        @keyframes movimientoH1 {
+                0% {
+                    transform: rotate(37deg);
+                }
+                50% {
+                    transform: rotate(44deg);
+                }
+                100% {
+                    transform: rotate(37deg);
+                }
+            }
+
+            @keyframes movimientoH2 {
+                0% {
+                    transform: rotate(29deg);
+                }
+                50% {
+                    transform: rotate(36deg);
+                }
+                100% {
+                    transform: rotate(29deg);
+                }
+            }
+
+            @keyframes movimientoH3 {
+                0% {
+                    transform: rotate(15deg);
+                }
+                50% {
+                    transform: rotate(22deg);
+                }
+                100% {
+                    transform: rotate(15deg);
+                }
+            }
+
+        /*---------------------Elements for the arm---------------*/
+
+        .arm img {
+            position: fixed;
+            transform: rotate(90deg);
+            width: 100px;
+            height: 100px;
+            top: -2px;
+            left: -35px;
+        }
+        /*------------------------------------------------*/
+
+        /*------------------------------------------------*/
+        .glove img {
+            position: fixed;
+            transform: rotate(-127deg);
+            width: 275px;
+            height: 275px;
+            top: -110px;
+            left: -120px;
+        }
+        /*-----------------------------------------------*/
+
+
+        /*-------------Face elements---------------------*/
+        .mouth{ /*Boca*/
+            width: 60px;
+            height: 31px;
+            top: 7px;
+            left: 46px;
+            border-radius: 20% 80% 59% 41% / 73% 52% 48% 27% ;
+            transform: rotate(10deg);
+            
+        }
+
+        .nose {
+            height: 12px;
+            width: 25px;
+            border-radius: 50%;
+            top: 17px;
+            left: 95px;
+            transform: rotate(1deg);
+        }
+
+        .smile {
+            position: fixed;
+            width: 77px;
+            height: 33px;
+            border: solid 2px #000;
+            border-color: transparent transparent black transparent; /* Establecer el color de borde completamente negro */
+            border-radius: 0% 100% 0% 100% / 8% 0% 100% 92%;
+            top: -9px;
+            left: 34px;
+        }
+        
+        .eye1 {
+            position: fixed;
+            left: 112px;
+            top: 5px;
+            transform: rotate(23deg);
+        }
+            .eyeR {
+                transform: translate(-50%, -50%);
+                height: 30px;
+                width: 19px;
+                border-radius: 50% 50% 47% 53% / 100% 100% 0% 0% ;
+                transform: rotate(-6deg);
+                top: -15px;
+                left: -9px;
+            }
+
+            .irisR {
+                height: 26px;
+                width: 15px;
+                left: 2px;
+                border-radius: 61% 39% 47% 53% / 30% 100% 0% 70%;
+                top: -13px;
+                left: -5px;
+                transform: rotate(3deg);
+            }
+
+        .eye2 {
+            position: fixed;
+            left: 50px;
+            top: -30px;
+        }
+
+            .eyeL {
+                transform: translate(-50%, -50%);
+                height: 50px;
+                width: 55px;
+                border-radius: 31% 69% 59% 41% / 43% 100% 0% 57%  ;
+                transform: rotate(10deg);
+            }
+            
+            .irisL {
+                height: 30px;
+                width: 19px;
+                border-radius: 61% 39% 47% 53% / 30% 100% 0% 70%;
+                left: 81px;
+                top: -10px;
+                transform: rotate(12deg);
+            }
+        
+
+        .ear {
+            position: absolute;
+            background-color: transparent;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 14px 29px 16px;
+            border-color: transparent transparent #fcdc94 transparent;
+            border-radius: 50%;
+            transform: rotate(-10deg);
+            top: -60px;
+            left: 35px;
+            animation: movimiento 0.2s linear infinite;
+            }
+
+            @keyframes movimiento {
+                0% {
+                    transform: rotate(-10deg);
+                }
+                50% {
+                    transform: rotate(-20deg);
+                }
+                100% {
+                    transform: rotate(-10deg);
+                }
+            }
+
+        /*-------------------------------------------------------*/
+
+
+        /*---------------------Legs elements---------------------*/
+        .leg1, .leg2, .leg3, .leg4 {
+            height: 12px;
+            width: 50px;
+        }
+
+                        .leg1{
+                            left: 23px;
+                            top: 0px;
+                            transform: rotate(45deg);
+                            transform-origin: left;
+                            animation: upperLeg 0.1s infinite linear;
+                        }
+                        
+                        .leg2{
+                            left: 60px;
+                            top: 40px;
+                            transform: rotate(100deg);
+                            transform-origin: left;
+                            animation: legDown 0.1s infinite linear;
+                        }
+
+                        .leg3{
+                            left: 23px;
+                            top: 0px;
+                            transform: rotate(45deg);
+                            transform-origin: left;
+                            animation: upperLeg 0.3s infinite linear;
+                        }
+                        
+                        .leg4{
+                            left: 60px;
+                            top: 40px;
+                            transform: rotate(100deg);
+                            transform-origin: left;
+                            animation: legDown 0.3s infinite linear;
+                        }
+
+                        @keyframes upperLeg {
+                            from {
+                                transform: rotate(100deg), ; /* Rotación inicial */
+                            }
+                            to {
+                                transform: rotate(180deg); /* Rotación final */
+                            }
+                        }
+
+                        @keyframes legDown {
+                            0% {
+                                transform: translateX(0px) translateY(0px) rotate(100deg);
+                            } 
+                            25% {
+                                transform: translateX(-28px) translateY(10px) rotate(85deg);
+                            }
+                            65% {
+                                transform: translateX(-70px) translateY(-3px) rotate(180deg);
+                            }
+                            100% {
+                                transform: translateX(-86px) translateY(-39px) rotate(200deg);
+                            }
+                        }
+        .knee1 {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            top: 37px;
+            left: 54px;
+            animation: legfollow 0.1s infinite linear;
+        }
+
+        .knee2 {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            top: 37px;
+            left: 54px;
+            animation: legfollow 0.3s infinite linear;
+        }
+
+        @keyframes legfollow {
+            0% {
+                transform: translateX(0px) translateY(0px) rotate(100deg);
+            } 
+            25% {
+                transform: translateX(-28px) translateY(10px) rotate(100deg);
+            }
+            65% {
+                transform: translateX(-70px) translateY(0px) rotate(100deg);
+            }
+            100% {
+                transform: translateX(-86px) translateY(-37px) rotate(100deg);
+            }
+        }
+
+        .legs1, .legs2 {
+            position: fixed;
+            top: 85px;
+            left: 10px;
+            transform: rotate(-25deg);
+        }
+                
+        .shoe_base {
+            width: 0;
+            height: 0;
+            border-left: 24px solid transparent; /* Lado izquierdo del triángulo */
+            border-right: 54px solid transparent; /* Lado derecho del triángulo */
+            border-radius: 30%;
+            background-color: transparent;
+        }
+                
+        .decoration1{
+            height: 10px;
+            width: 22px;
+            top: 34px;
+            left: 40px;
+            transform: rotate(-45deg);
+        }
+                
+        .decoration2 {
+            position: fixed;
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent; /* Lado izquierdo del triángulo */
+            border-right: 1px solid transparent; /* Lado derecho del triángulo */
+            top: 36px;
+            left: 33px;
+            border-bottom: 14px solid white; 
+            background-color: transparent;
+        }
+                
+        .sock {
+            height: 15px;
+            width: 25px;
+            left: 15px;
+        }
+                
+        .shoe {
+            position: fixed;
+            top: 80px;
+            left: 25px;
+            transform: rotate(5deg);
+            animation: shoeMovement 0.1s linear infinite;
+        }
+
+        .shoe2 {
+            position: fixed;
+            top: 80px;
+            left: 25px;
+            transform: rotate(5deg);
+            animation: shoeMovement 0.3s linear infinite;
+        }
+
+
+                        
+        @keyframes shoeMovement {
+            0% {
+                transform: translateX(0px) translateY(0px) rotate(5deg);
+            } 
+            25% {
+                transform: translateX(-18px) translateY(0px) rotate(15deg);
+            }
+            65% {
+                transform: translateX(-70px) translateY(-70px) rotate(75deg);
+            }
+            100% {
+                transform: translateX(-65px) translateY(-110px) rotate(105deg);
+            }
+        }
+
+
+        .moving-object {
+            position: fixed;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        top: 50px; /* Alinea el objeto verticalmente al centro del círculo */
+        left: 70px; /* Comienza desde el borde izquierdo del círculo */
+            /* animation: moveAroundS 5s linear infinite; */
+        }
+
+    .moving-sign {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent; /* Lado izquierdo del triángulo */
+            border-right: 15px solid transparent; /* Lado derecho del triángulo */
+            transform: rotate(90deg);
+            top: 40px;
+            left: 100px;
+            background-color: transparent;
+            /* animation: moveAroundS 5s linear infinite; */
+        }
+
+        .moving{
+            position: fixed;
+            top: 125px;
+            left: 50px;
+            animation: moveAroundS 0.5s linear infinite;
+        }
+
+    @keyframes moveAroundS {
+        0% {
+            transform: translateX(0px) translateY(-80px) rotate(90deg); 
+        }
+        13% {
+            transform: translateX(65px) translateY(-55px) rotate(135eg);
+        }
+        26%{
+            transform: translateX(85px) translateY(0px) rotate(180deg);
+        }
+        39% {
+            transform: translateX(65px) translateY(55px) rotate(225deg);
+        }
+        52% {
+            transform: translateX(0px) translateY(80px) rotate(270deg); 
+        }
+        65% {
+            transform: translateX(-65px) translateY(55px) rotate(315deg); 
+        }
+        78% {
+            transform: translateX(-85px) translateY(0px) rotate(360deg); 
+        }
+        91% {
+            transform: translateX(-65px) translateY(-55px) rotate(405deg); 
+        }
+        100% {
+            transform: translateX(0px) translateY(-80px) rotate(450deg); 
+        }
+    } 
+
+    .titulo {
+    position: fixed;
+    font-size: xx-large;
+    color: white;
+    top: 85%;
+}
+
+.titulo:hover {
+    animation: coloration 5s ease-in infinite;
+}
+
+@keyframes coloration {
+    0% {
+        color: #462997;
+    }
+    17% {
+        color: #462997;
+    }
+    34% {
+        color: yellow;
+    }
+    51% {
+        color: yellow;
+    }
+    68% {
+        color: #f00;
+    }
+    85% {
+        color: #f00;
+    }
+    100%{
+        color: #462997;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="Green Hill Zone OST.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="titulo">
+        <h1>Sonic the Hedgehog</h1>
+    </div>
+    
+    <div class="character-container">
+        
+        <div class="legs1">
+            <div class="knee1"></div>
+            <div class="leg1"></div>
+            <div class="leg2"></div>
+            
+            <div class="shoe">
+                <div class="shoe_base"></div>
+                <div class="decoration1"></div>
+                <div class="decoration2"></div>
+                <div class="sock"></div>
+            </div>
+        </div>
+
+        <div class="legs2">
+            <div class="knee2"></div>
+            <div class="leg3"></div>
+            <div class="leg4"></div>
+            
+            <div class="shoe2">
+                <div class="shoe_base"></div>
+                <div class="decoration1"></div>
+                <div class="decoration2"></div>
+                <div class="sock"></div>
+            </div>
+        </div>
+        
+        <div class="body"></div>
+        <div class="head"></div>
+        
+        <div class="hair1">
+            <img src="Sonic_hair(1).svg" alt="Sonic hair">
+        </div>
+        <div class="hair2">
+            <img src="Sonic_hair(1).svg" alt="Sonic hair">
+        </div>
+        <div class="hair3">
+            <img src="Sonic_hair(1).svg" alt="Sonic hair">
+        </div>
+        
+        
+        <div class="eye1">
+            <div class="eyeR"></div>
+            <div class="irisR"></div>
+        </div>
+        
+        <div class="eye2">
+            <div class="eyeL"></div>
+            <div class="irisL"></div>
+        </div>
+        
+        <div class="mouth"></div>
+        <div class="smile"></div>
+        <div class="nose"></div>
+
+        
+        <div class="arm">
+            <img src="Sonic_arm(1).svg" alt="Sonic arm">
+        </div>
+        
+        <div class="glove">
+            <img src="Sonic_hand(1).svg" alt="Sonic glove">
+        </div>
+
+        
+        <div class="ear"></div>
+
+        <div class="moving">
+            <div class="moving-sign"></div>
+            <div class="moving-object"></div>
+        </div>
+        
+    </div>
+</body>
+</html>
+
