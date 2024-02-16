@@ -60,7 +60,7 @@
         }
 
         /*Aplicación de color blanco*/
-        .decoration1, .decoration2 ,.sock, .eyeL, .eyeR {
+        .decoration1, .decoration2 ,.sock, .eyeL, .eyeR1, .eyeR2 {
             position: fixed;
             background-color: white;
         }
@@ -216,15 +216,17 @@
             transform: rotate(1deg);
         }
 
-        .smile {
+        .nose::before {
+            content: "";
+            display: block;
             position: fixed;
             width: 77px;
             height: 33px;
             border: solid 2px #000;
             border-color: transparent transparent black transparent; /* Establecer el color de borde completamente negro */
             border-radius: 0% 100% 0% 100% / 8% 0% 100% 92%;
-            top: -9px;
-            left: 34px;
+            top: -25px;
+            left: -62px;
         }
         
         .eye1 {
@@ -233,11 +235,21 @@
             top: 5px;
             transform: rotate(23deg);
         }
-            .eyeR {
+            .eyeR1 {
                 transform: translate(-50%, -50%);
                 height: 30px;
                 width: 19px;
-                border-radius: 50% 50% 47% 53% / 100% 100% 0% 0% ;
+                border-radius: 75% 25% 47% 53% / 100% 100% 0% 0% ;
+                transform: rotate(-6deg);
+                top: -15px;
+                left: -9px;
+            }
+
+            .eyeR2 {
+                transform: translate(-50%, -50%);
+                height: 30px;
+                width: 19px;
+                border-radius: 52% 48% 47% 53% / 100% 100% 0% 0% ;
                 transform: rotate(-6deg);
                 top: -15px;
                 left: -9px;
@@ -250,7 +262,7 @@
                 border-radius: 61% 39% 47% 53% / 30% 100% 0% 70%;
                 top: -13px;
                 left: -5px;
-                transform: rotate(3deg);
+                transform: rotate(0deg);
             }
 
         .eye2 {
@@ -629,7 +641,8 @@
         
         
         <div class="eye1">
-            <div class="eyeR"></div>
+            <div class="eyeR1"></div>
+            <div class="eyeR2"></div>
             <div class="irisR"></div>
         </div>
         
@@ -639,7 +652,7 @@
         </div>
         
         <div class="mouth"></div>
-        <div class="smile"></div>
+        <!-- <div class="smile"></div> -->
         <div class="nose"></div>
 
         
